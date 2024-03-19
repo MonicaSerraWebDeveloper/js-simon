@@ -26,41 +26,39 @@ while (randomNumberArray.length < howManyNumberForArray) {
 
     randomNumber++
 }
-
+// Stampiamo nel DOM la lista dell'Array di randomNumberArray
 textInPage.innerHTML = randomNumberArray;
 
+// Rimuoviamo la lista con un setTimeout di 30 secondi
 const cancelTheNumbers = setTimeout (function() {
     textInPage.innerHTML = '';
-}, 5000)
+}, 30000)
 
+// Sempre con un setTimeout di un secondodi ritardo andiamo a chiedere all'utente con il prompt i numeri che ha appena visto
 const promptUser = setTimeout (function() {
+    // Per ricordare ogni numero aggiunto nel prompt ci andiamo a stampare il valore in un Array vuoto chiamato userNumberInTheArray
     let userNumberInTheArray = []
+    // Con il ciclo for creiamo 5 con 5 prompt all'utente un numero
     for (let i = 0; i < howManyNumberForArray; i++) {
         let userNumber = parseInt(prompt('Scrivi un numero che ricordi'))
         userNumberInTheArray.push(userNumber)
     }
     console.log(userNumberInTheArray);
 
+    // Contiamo con una variabile esterna quanti elementi vengono indovinati tramite un ciclo for riprendiamo l'array appena creato popolato dai numeri che ci sono stati scritti dall'utente per verificare quali numeri sono prensenti nell'array random di randomNumberArray, i numeri corretti fanno salite la variabile di youScore e allora stesso tempo vengono aggiunti in un'altra lista vuota di numeri corretti scritti dall'utente
     let yourScore = 0;
+    const correctNumbers = [];
     for (let i = 0; i < userNumberInTheArray.length; i++) {
         let compareNumber = userNumberInTheArray[i]
         if (randomNumberArray.includes(compareNumber)) {
+            correctNumbers.push(compareNumber)
             yourScore++
         }
     }
-
+    // Prendiamo dal DOM un div che stampa il risultato, sia il punteggio dello score che i numeri detti correttamente
     const resultUser = document.querySelector('.result')
-    resultUser.innerHTML = yourScore
-    console.log(yourScore);
-
+    resultUser.innerHTML = `Hai totalizzato: ${yourScore} punti perché hai ricordato: ${correctNumbers}`
 }, 6000)
-
-
-
-
-// Il prompt esce 5 volte per ogni numero arrivata a 5 allora il prompt non esce più
-
-
 
 // Creiamo un array vuoto 
 // Prendiamo la funzione che genera dei numeri random
