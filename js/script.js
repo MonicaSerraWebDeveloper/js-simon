@@ -58,7 +58,7 @@ const promptUser = setTimeout (function() {
     // Prendiamo dal DOM un div che stampa il risultato, sia il punteggio dello score che i numeri detti correttamente
     const resultUser = document.querySelector('.result')
     resultUser.innerHTML = `Hai totalizzato: ${yourScore} punti perché hai ricordato: ${correctNumbers}`
-}, 6000)
+}, 31000)
 
 // Creiamo un array vuoto 
 // Prendiamo la funzione che genera dei numeri random
