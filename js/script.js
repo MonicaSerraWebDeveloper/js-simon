@@ -2,6 +2,16 @@
 // Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
+// Array vuoto da popolare con numeri random
+const randomNumberArray = [];
+
+// Prendiamo il div dove andiamo a stampare i numeri random da mostrare allo user
+const textInPage = document.querySelector('.list-numbers-random');
+console.log(textInPage);
+
+// Creiamo una variabile che genera numeri random da 1 a 100
+let randomNumber = Math.floor((Math.random() * 100) + 1);
+console.log(randomNumber);
 
 // Creiamo un array vuoto 
 // Prendiamo la funzione che genera dei numeri random
