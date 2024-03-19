@@ -26,6 +26,8 @@ while (randomNumberArray.length < howManyNumberForArray) {
     randomNumber++
 }
 
+textInPage.innerHTML = randomNumberArray
+
 console.log(randomNumberArray);
 
 
