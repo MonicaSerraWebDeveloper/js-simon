@@ -9,9 +9,26 @@ const randomNumberArray = [];
 const textInPage = document.querySelector('.list-numbers-random');
 console.log(textInPage);
 
-// Creiamo una variabile che genera numeri random da 1 a 100
-let randomNumber = Math.floor((Math.random() * 100) + 1);
-console.log(randomNumber);
+// Variabili per i numeri che ci permette di rendere le operazioni più flessibili
+let minNumber = 1;
+let maxNumber = 100;
+let howManyNumberForArray = 5
+
+// Prendiamo i numeri random che vengono generati e li pushiamo dentro l'array
+// Assicurandoci che non siano mai uguali
+while (randomNumberArray.length < howManyNumberForArray) {
+    // Creiamo una variabile per creare un numero random ogni volta
+    let randomNumber = Math.floor((Math.random() * 100) + 1);
+    if (!randomNumberArray.includes(randomNumber)) {
+        randomNumberArray.push(randomNumber)
+    }
+
+    randomNumber++
+}
+
+console.log(randomNumberArray);
+
+
 
 // Creiamo un array vuoto 
 // Prendiamo la funzione che genera dei numeri random
