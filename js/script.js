@@ -4,6 +4,7 @@
 
 // Array vuoto da popolare con numeri random
 const randomNumberArray = [];
+console.log(randomNumberArray);
 
 // Prendiamo il div dove andiamo a stampare i numeri random da mostrare allo user
 const textInPage = document.querySelector('.list-numbers-random');
@@ -26,9 +27,38 @@ while (randomNumberArray.length < howManyNumberForArray) {
     randomNumber++
 }
 
-textInPage.innerHTML = randomNumberArray
+textInPage.innerHTML = randomNumberArray;
 
-console.log(randomNumberArray);
+const cancelTheNumbers = setTimeout (function() {
+    textInPage.innerHTML = '';
+}, 5000)
+
+const promptUser = setTimeout (function() {
+    let userNumberInTheArray = []
+    for (let i = 0; i < howManyNumberForArray; i++) {
+        let userNumber = parseInt(prompt('Scrivi un numero che ricordi'))
+        userNumberInTheArray.push(userNumber)
+    }
+    console.log(userNumberInTheArray);
+
+    let yourScore = 0;
+    for (let i = 0; i < userNumberInTheArray.length; i++) {
+        let compareNumber = userNumberInTheArray[i]
+        if (randomNumberArray.includes(compareNumber)) {
+            yourScore++
+        }
+    }
+
+    const resultUser = document.querySelector('.result')
+    resultUser.innerHTML = yourScore
+    console.log(yourScore);
+
+}, 6000)
+
+
+
+
+// Il prompt esce 5 volte per ogni numero arrivata a 5 allora il prompt non esce più
 
 
 
