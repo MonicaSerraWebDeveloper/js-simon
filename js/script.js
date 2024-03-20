@@ -32,7 +32,7 @@ textInPage.innerHTML = randomNumberArray;
 // Rimuoviamo la lista con un setTimeout di 30 secondi
 const cancelTheNumbers = setTimeout (function() {
     textInPage.innerHTML = '';
-}, 3000)
+}, 30000)
 
 // Sempre con un setTimeout di un secondodi ritardo andiamo a chiedere all'utente con il prompt i numeri che ha appena visto
 const promptUser = setTimeout (function() {
@@ -53,7 +53,7 @@ const promptUser = setTimeout (function() {
     // Prendiamo dal DOM un div che stampa il risultato, sia il punteggio dello score che i numeri detti correttamente
     const resultUser = document.querySelector('.result')
     resultUser.innerHTML = `Hai totalizzato: ${yourScore} punti perché hai ricordato: ${userNumberInTheArray}`
-}, 4000)
+}, 31000)
 
 // Creiamo un array vuoto 
 // Prendiamo la funzione che genera dei numeri random
