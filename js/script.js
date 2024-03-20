@@ -43,7 +43,7 @@ const promptUser = setTimeout (function() {
     // Con il ciclo for creiamo 5 con 5 prompt all'utente un numero
     for (let i = 0; i < howManyNumberForArray; i++) {
         let userNumber = parseInt(prompt('Scrivi un numero che ricordi'))
-        if (randomNumberArray.includes(userNumber)) {
+        if (randomNumberArray.includes(userNumber) && !userNumberInTheArray.includes(userNumber)) {
             userNumberInTheArray.push(userNumber)
             yourScore++
         }
